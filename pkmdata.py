@@ -14,7 +14,7 @@ pokedex = {}
 for i in list_of_pkmn:
     pokedex[i["species_id"]]=i["identifier"] # data['1'] gives 'bulbasaur', etc.
 
-reader = DictReader(open('dataabilities.csv','r'),("id","identifier"))
+reader = DictReader(open('data/abilities.csv','r'),("id","identifier"))
 
 list_of_abilities = []
 for i in reader:
