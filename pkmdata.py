@@ -4,7 +4,7 @@ import csv
 for row in reader:
     print (row)"""
 from csv import DictReader
-reader = DictReader(open('pokemon.csv','r'),("species_id","identifier"))
+reader = DictReader(open('data/pokemon.csv','r'),("species_id","identifier"))
 
 list_of_pkmn = []
 for i in reader:
@@ -14,7 +14,7 @@ pokedex = {}
 for i in list_of_pkmn:
     pokedex[i["species_id"]]=i["identifier"] # data['1'] gives 'bulbasaur', etc.
 
-reader = DictReader(open('abilities.csv','r'),("id","identifier"))
+reader = DictReader(open('dataabilities.csv','r'),("id","identifier"))
 
 list_of_abilities = []
 for i in reader:
