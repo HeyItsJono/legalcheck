@@ -3,9 +3,11 @@ import struct
 from pkmdata import pokedex
 from pkmdata import abilitydex
 import csv
+import checksum
 
 # When reading a binary file, always add a 'b' to the file open mode
-with open('charmander_scratch_bin.pkm', 'rb') as f:
+filename = input("Pokemon Filename \n")
+with open(filename, 'rb') as f:
     f.seek(0)
     bytes = f.read(4)
     PID = ( bytes[3] << 24 ) + ( bytes[2] << 16 ) + \
@@ -47,3 +49,4 @@ print( str(HP) + " HP / " + str(Atk) + " Atk / " + str(Def) + \
 print( "Is Egg: " + str(bool(IsEgg)) )
 print( "Is Nicknamed: " + str(bool(IsNick)) )
 print( "Ability: " + Ability )
+checksum.checksum(filename)
